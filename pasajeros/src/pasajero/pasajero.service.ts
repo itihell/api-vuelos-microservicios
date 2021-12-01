@@ -4,12 +4,12 @@ import { PasajeroInterface } from '../common/interfaces/pasajero.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { PASAJERO } from 'src/common/models/models';
 import { Model } from 'mongoose';
-import { UserInterface } from 'src/common/interfaces/user.interface';
 
 @Injectable()
 export class PasajeroService {
   constructor(
-    @InjectModel(PASAJERO.name) private readonly model: Model<UserInterface>,
+    @InjectModel(PASAJERO.name)
+    private readonly model: Model<PasajeroInterface>,
   ) {}
   async create(campos: PasajeroDTO): Promise<PasajeroInterface> {
     const newPasajero = new this.model(campos);

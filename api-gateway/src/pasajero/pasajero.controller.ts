@@ -31,7 +31,7 @@ export class PasajeroController {
 
   @Get(':id')
   findOne(@Param('id') id: string): Observable<PasajeroInterface> {
-    return this._clientProxyPasajero.send(PasajerosMensajes.FIND_ONE, '');
+    return this._clientProxyPasajero.send(PasajerosMensajes.FIND_ONE, id);
   }
 
   @Put(':id')

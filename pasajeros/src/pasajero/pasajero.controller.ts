@@ -20,6 +20,7 @@ export class PasajeroController {
 
   @MessagePattern(PasajerosMensajes.FIND_ONE)
   findOne(@Payload() id: string) {
+    console.log(id)
     return this.pasajeroService.findOne(id);
   }
 
