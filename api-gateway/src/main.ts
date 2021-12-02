@@ -14,7 +14,7 @@ async function bootstrap() {
     .setTitle('Api de Vuelos')
     .setDescription('Simple aplicacion de vuelos programados')
     .setVersion('1.0.0')
-    //.addBearerAuth()
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('/api/docs', app, document, {

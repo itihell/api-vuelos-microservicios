@@ -8,6 +8,7 @@ import {
   Delete,
   HttpException,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { ClientProxySuperFlights } from '../common/proxy/client.proxy';
@@ -15,7 +16,9 @@ import { VueloInterface } from '../common/interfaces/vuelo.interface';
 import { VueloTDO } from './dto/vuelos.dto';
 import { VuelosMensajes, PasajerosMensajes } from '../common/constants';
 import { ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from '../auth/guards/jwt.auth.guard';
 @ApiTags('vuelos')
+@UseGuards(JwtAuthGuard)
 @Controller('api/v2/vuelo')
 export class VueloController {
   constructor(private readonly clientProxy: ClientProxySuperFlights) {}

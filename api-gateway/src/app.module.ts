@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { PasajeroModule } from './pasajero/pasajero.module';
 import { VueloModule } from './vuelo/vuelo.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { VueloModule } from './vuelo/vuelo.module';
     UserModule,
     PasajeroModule,
     VueloModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
